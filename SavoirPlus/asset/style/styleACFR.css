@@ -1,0 +1,150 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #20204C;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1A1040;
+    padding: 15px 20px;
+}
+
+header .logo {
+    font-size: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 10%;
+    width: 10%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+header nav ul li a:hover {
+    color: #F4661B;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* position en bas de la page */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #1A1040;
+    color: white;
+}
+
+/* Button Styles */
+button {
+    position: absolute;
+    bottom: 60px;
+    left: 90%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 60px;
+    border: 3px solid #F4661B;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: white;
+    background: #1A1040;
+    font-size: 1.2em;
+    font-weight: 550;
+}
+
+button:hover {
+    background: #F4661B;
+    color: white;
+    font-size: 1.5em;
+}
+
+/* Card Styles */
+.cards {
+    position: absolute;
+    outline: white solid 1px;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(2, 420px);
+    grid-template-rows: repeat(2, 400px);
+    grid-template-areas: "a b" "c b";
+    gap: 15px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.card.orange {
+    background-color: #F4661B;
+    grid-area: a;
+}
+
+.card.blue {
+    background-color: #1A1040;
+    grid-area: b;
+}
+
+.card.white {
+    background-color: white;
+    grid-area: c;
+    color: #1A1040;
+}
+
+.cards .card p.tip {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.cards .card p.second-text {
+    font-size: 1.2em;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.cards .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px #4444;
+}
+
+.cards:hover > .card:not(:hover) {
+    filter: blur(4px);
+    transform: scale(0.9, 0.9);
+}
