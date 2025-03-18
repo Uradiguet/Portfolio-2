@@ -1,7 +1,9 @@
+/* Add this to your styleACFR.css file */
+
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     background-color: #20204C;
     color: white;
 }
@@ -52,7 +54,6 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* position en bas de la page */
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -84,67 +85,50 @@ button:hover {
     font-size: 1.5em;
 }
 
-/* Card Styles */
-.cards {
-    position: absolute;
-    outline: white solid 1px;
-    top: 54%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* Grid Container */
+.container {
     display: grid;
-    grid-template-columns: repeat(2, 420px);
-    grid-template-rows: repeat(2, 400px);
-    grid-template-areas: "a b" "c b";
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
 .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: justify;
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
+    background-color: #1A1040;
     color: white;
-    cursor: pointer;
-    transition: 400ms;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: filter 0.3s;
 }
 
 .card.orange {
     background-color: #F4661B;
-    grid-area: a;
 }
 
 .card.blue {
     background-color: #1A1040;
-    grid-area: b;
 }
 
 .card.white {
-    background-color: white;
-    grid-area: c;
+    background-color: #FFFFFF;
     color: #1A1040;
 }
 
-.cards .card p.tip {
-    font-size: 2em;
-    font-weight: 700;
-}
-
-.cards .card p.second-text {
+.card p {
     font-size: 1.2em;
-    margin-left: 10px;
-    margin-right: 10px;
+    color: white;
 }
 
-.cards .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px #4444;
+.card.white p {
+    color: #1A1040;
 }
 
-.cards:hover > .card:not(:hover) {
-    filter: blur(4px);
-    transform: scale(0.9, 0.9);
+.card:hover {
+    filter: none;
+}
+
+.container:hover .card:not(:hover) {
+    filter: blur(5px);
 }

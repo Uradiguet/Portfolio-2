@@ -1,7 +1,7 @@
 /* style.css */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     background-color: #20204C;
     color: white;
 }
@@ -595,4 +595,137 @@ footer{
     to {
         left: 100%;
     }
+}
+
+/* Form Styles */
+.form {
+    max-width: 600px;
+    margin: 20px auto; /* Add margin to the top and bottom */
+    padding: 20px;
+    max-height: 40%;
+    background: #1A1040;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.input, .input01 {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #20204C;
+    color: white;
+    transition: border-color 0.3s;
+    margin-right: 20px; /* Add margin to the right side */
+}
+
+.flex {
+    display: flex;
+    gap: 50px;
+}
+
+label {
+    display: block;
+    margin-bottom: 25px;
+    position: relative;
+    color: white;
+}
+
+.input:focus, .input01:focus {
+    border-color: #F4661B;
+    outline: none;
+}
+
+label span {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    padding: 0 5px;
+    color: #999;
+    transition: top 0.3s, font-size 0.3s;
+}
+
+.input:focus + span, .input:not(:placeholder-shown) + span,
+.input01:focus + span, .input01:not(:placeholder-shown) + span {
+    top: -10px;
+    font-size: 12px;
+    color: #F4661B;
+}
+
+.fancy {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #F4661B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.fancy:hover {
+    background: #1A1040;
+    color: #ffffff;
+}
+
+.fancy .top-key, .fancy .bottom-key-1, .fancy .bottom-key-2 {
+    display: none;
+}
+
+
+.document-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.document-card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #1A1040;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.document-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.document-card object {
+    width: 100%;
+    height: 85%;
+    border: none;
+}
+
+.document-card.focused {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    z-index: 1000;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+}
+
+.document-title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: #F4661B;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
 }
